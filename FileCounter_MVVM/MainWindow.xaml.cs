@@ -21,12 +21,13 @@ namespace FileCounter_MVVM
     /// </summary>
     public partial class MainWindow : Window
     {
-        private FileCounterVM _fcVM;
+
         public MainWindow()
         {
             InitializeComponent();
-            _fcVM = new FileCounterVM();
-            DataContext = _fcVM;
         }
+
+
+
     }
 }

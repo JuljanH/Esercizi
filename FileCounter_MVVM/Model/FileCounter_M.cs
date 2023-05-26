@@ -11,19 +11,27 @@ namespace FileCounter_MVVM.Model
 {
     public class FileCounter_M : IFilterCounter_M
     {
-        public string PathString { get; set; }
+        private string _pathstring;
+        private int _count;
+        public string PathString
+        {
+            get { return _pathstring; } set
+            {
+                _pathstring = value;
+                _count = Directory.GetFiles(_pathstring, "*", SearchOption.AllDirectories).Length; ;
+
+            } }
 
         public int Count
         {
             get
             {
-                return Directory.GetFiles(PathString, "*", SearchOption.AllDirectories).Length;
+                return _count; 
             }
-            set
-            {
-                Directory.Delete(PathString, true);
-            }
+
         }
+
+
 
     }
 }

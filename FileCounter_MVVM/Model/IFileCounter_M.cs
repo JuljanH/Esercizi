@@ -11,7 +11,7 @@ namespace FileCounter_MVVM.Model
         public interface IFilterCounter_M
         {
             string PathString { get; set; }
-            int Count { get; set; }
+            int Count { get; }
 
         }
     }
