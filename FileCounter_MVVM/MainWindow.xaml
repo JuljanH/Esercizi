@@ -1,0 +1,14 @@
+﻿<Window x:Class="FileCounter_MVVM.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FileCounter_MVVM"
+        mc:Ignorable="d"
+        Title="FIleCounter" Height="450" Width="800">
+    <Grid>
+        <TextBox x:Name="folderPathTextBox" HorizontalAlignment="Left" Height="41" Margin="108,97,0,0" TextWrapping="Wrap" Text="{Binding FolderPath, Mode=TwoWay}" VerticalAlignment="Top" Width="552"/>
+        <TextBox x:Name="txtB_1" HorizontalAlignment="Left" Height="23" Margin="108,69,0,0" TextWrapping="Wrap" Text="Inserisci percorso cartella:" VerticalAlignment="Top" Width="276"/>
+        <TextBlock x:Name="countfiles" Margin="172,217,178,164" FontWeight="Bold" Text=""/>
+    </Grid>
+</Window>
