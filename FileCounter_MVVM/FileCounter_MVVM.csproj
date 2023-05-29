@@ -57,6 +57,7 @@
     </ApplicationDefinition>
     <Compile Include="Model\FileCounter_M.cs" />
     <Compile Include="Model\IFileCounter_M.cs" />
+    <Compile Include="ViewModel\ClasseConverter.cs" />
     <Compile Include="ViewModel\FileCounterVM.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -32,3 +32,5 @@ G:\RepoSchool\FileCounter_MVVM\obj\Debug\FileCounter_MVVM.pdb
 G:\RepoSchool\FileCounter_MVVM\obj\Debug\GeneratedInternalTypeHelper.g.cs
 G:\RepoSchool\FileCounter_MVVM\obj\Debug\FileCounter_MVVM_MarkupCompile.lref
 G:\RepoSchool\FileCounter_MVVM\obj\Debug\App.baml
+C:\Users\jhoxha\OneDrive - ALTEN Group\Documents\GitHub\Esercizi\Esercizi\FileCounter_MVVM\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\jhoxha\OneDrive - ALTEN Group\Documents\GitHub\Esercizi\Esercizi\FileCounter_MVVM\obj\Debug\App.baml

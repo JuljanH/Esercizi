@@ -13,25 +13,23 @@ namespace FileCounter_MVVM.Model
     {
         private string _pathstring;
         private int _count;
+
         public string PathString
         {
             get { return _pathstring; } set
             {
                 _pathstring = value;
-                _count = Directory.GetFiles(_pathstring, "*", SearchOption.AllDirectories).Length; ;
-
-            } }
+                _count = Directory.GetFiles(_pathstring, "*", SearchOption.AllDirectories).Length;
+            }
+        }
 
         public int Count
         {
             get
             {
-                return _count; 
+                return _count;
             }
 
         }
-
-
-
     }
 }

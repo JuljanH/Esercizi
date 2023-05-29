@@ -27,14 +27,14 @@ namespace FileCounter_MVVM.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(variablename));
         }
 
+        public string bgColor;
 
         public string FolderPath
         {
             get { return model.PathString; }
             set
             {
-                if (value != model.PathString)
-                    model.PathString = value;
+                OnPropertyChanged(nameof(bgColor));
                 OnPropertyChanged(nameof(FolderPath));
                 OnPropertyChanged(nameof(Count));
             }
@@ -43,7 +43,6 @@ namespace FileCounter_MVVM.ViewModel
         public int Count
         {
             get { return model.Count; }
-
         }
 
     }
