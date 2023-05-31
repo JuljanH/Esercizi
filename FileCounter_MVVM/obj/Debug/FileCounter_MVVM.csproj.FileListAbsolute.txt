@@ -50,3 +50,5 @@ C:\Users\jhoxha\OneDrive - ALTEN Group\Bureau\FileCounter_MVVM\obj\Debug\FileCou
 C:\Users\jhoxha\OneDrive - ALTEN Group\Bureau\FileCounter_MVVM\obj\Debug\FileCounter_MVVM.csproj.CoreCompileInputs.cache
 C:\Users\jhoxha\OneDrive - ALTEN Group\Bureau\FileCounter_MVVM\obj\Debug\FileCounter_MVVM.exe
 C:\Users\jhoxha\OneDrive - ALTEN Group\Bureau\FileCounter_MVVM\obj\Debug\FileCounter_MVVM.pdb
+C:\Users\jhoxha\OneDrive - ALTEN Group\Documents\GitHub\Esercizi\Esercizi\FileCounter_MVVM\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\jhoxha\OneDrive - ALTEN Group\Documents\GitHub\Esercizi\Esercizi\FileCounter_MVVM\obj\Debug\App.baml
