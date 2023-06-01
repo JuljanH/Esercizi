@@ -1,0 +1,38 @@
+[
+	{
+		"Nome": "Giacomo",
+		"Cognome": "Fantozzi",
+		"Sesso": "Uomo",
+		"Età": "24",
+		"Telefono": "4837284782"
+	},
+	{
+		"Cognome": "Cortigiani",
+		"Età": "27",
+		"Nome": "Alessio",
+		"Sesso": "Uomo",
+		"Telefono": "1898254"
+	},
+	{
+		"Nome": "Daniele",
+		"Cognome": "Mozzini",
+		"Sesso": "Uomo",
+		"Età": "44",
+		"Telefono": "785856"
+	},
+	{
+		"Nome": "Giuliana",
+		"Cognome": "Moreira",
+		"Sesso": "Donna",
+		"Età": "34",
+		"Telefono": "4837284782"
+	},
+	{
+		"Nome": "Arianna",
+		"Cognome": "Lombardi",
+		"Sesso": "Donna",
+		"Età": "25",
+		"Telefono": "4837284782"
+	}
+]
+	
