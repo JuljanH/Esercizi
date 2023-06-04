@@ -25,7 +25,9 @@ namespace FileCounter_MVVM
         public MainWindow()
         {
             InitializeComponent();
+            //DataContext = new FileCounterVM();
         }
+
 
 
 

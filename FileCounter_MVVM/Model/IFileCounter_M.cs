@@ -13,6 +13,8 @@ namespace FileCounter_MVVM.Model
             string PathString { get; set; }
             int Count { get; }
 
+            //string BgColor { get; set; }
+
         }
     }
 }

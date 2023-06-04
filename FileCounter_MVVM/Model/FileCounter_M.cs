@@ -15,23 +15,33 @@ namespace FileCounter_MVVM.Model
         private int _count;
         public string PathString
         {
-            get { return _pathstring; } set
+            get { return _pathstring; }
+            set
             {
-                _pathstring = value;
-                _count = Directory.GetFiles(_pathstring, "*", SearchOption.AllDirectories).Length; ;
+                if (!string.IsNullOrEmpty(value))
+                {
+                    _pathstring = value;
+                    _count = Directory.GetFiles(_pathstring, "*", SearchOption.AllDirectories).Length;
+                }
+            }
+        }
 
-            } }
+
+
+        /*public string BgColor
+        {
+            get { return Directory.Exists(_pathstring) ? "Verde" : "Rosso"; }
+            set { }
+        }*/
+
+ 
 
         public int Count
         {
             get
             {
-                return _count; 
+                return _count;
             }
-
         }
-
-
-
     }
 }

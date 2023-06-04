@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converter\StringToColorConverter.cs" />
     <Compile Include="Model\FileCounter_M.cs" />
     <Compile Include="Model\IFileCounter_M.cs" />
     <Compile Include="ViewModel\FileCounterVM.cs" />
