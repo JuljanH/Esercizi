@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EsercizioJson"
+        xmlns:converters="clr-namespace:System.Windows;assembly=PresentationFramework"
         xmlns:vm="clr-namespace:EsercizioJson.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
@@ -16,8 +17,16 @@
         <TextBox x:Name="Nome"  Text="{Binding SelectedPerson.Nome, Mode=OneWay}" />
         <TextBox x:Name="Cognome" Text="{Binding SelectedPerson.Cognome}"   />
         <TextBox x:Name="Sesso"  Text="{Binding SelectedPerson.Sesso}"   />
-        <TextBox x:Name="Età"  Text="{Binding SelectedPerson.Età}"   />
-        <TextBox x:Name="Telefono" Text="{Binding SelectedPerson.Telefono, Mode=OneWay}"  /> 
+            <TextBox x:Name="Età"  Text="{Binding SelectedPerson.Età}" >
+                <TextBox.Visibility>
+                    <Binding Path="SelectedPerson.MostraEtà" Mode="OneWay">
+                        <Binding.Converter>
+                            <BooleanToVisibilityConverter />
+                        </Binding.Converter>
+                    </Binding>
+                </TextBox.Visibility>
+            </TextBox>
+        <TextBox x:Name="Telefono" Text="{Binding SelectedPerson.Telefono, Mode=OneWay}" /> 
         </StackPanel>
     </Grid>
 </Window>

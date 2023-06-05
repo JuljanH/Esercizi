@@ -68,5 +68,10 @@ namespace EsercizioJson.Model
             handler?.Invoke(this, new PropertyChangedEventArgs(info));
         }
 
+        public bool MostraEtà
+        {
+            get { return Sesso != "Uomo"; }
+        }
+
     }
 }
