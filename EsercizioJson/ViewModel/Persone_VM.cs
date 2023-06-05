@@ -1,19 +1,35 @@
 ﻿using EsercizioJson.Model;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace EsercizioJson.ViewModel
 {
-    internal class Persone_VM:INotifyPropertyChanged
+    internal class Persone_VM : INotifyPropertyChanged
     {
-        private Persone_M Persone_M;
-        public List<Persone_M> Items { get; set; }
+        private Persone_M Persone_M = new Persone_M();
 
+        private ObservableCollection<Persone_M> _items;
+
+        
+        public ObservableCollection<Persone_M> Items
+        {
+            get
+            {
+                return _items;
+            }
+            set
+            {
+                if (_items != value)
+                {
+                    _items = value;
+                }
+                OnPropertyChanged(nameof(Items));
+            }
+        }
+        
         public Persone_VM()
         {
             Persone_M = new Persone_M();
@@ -22,23 +38,24 @@ namespace EsercizioJson.ViewModel
 
         private void GetJsonData()
         {
-            string json = System.IO.File.ReadAllText(@"C:\Users\jhoxha\OneDrive - ALTEN Group\Documents\Sourcetree_esercitazione\EsercizioJson\Prova.json");
-            Items = JsonConvert.DeserializeObject<List<Persone_M>>(json);
+            string json = System.IO.File.ReadAllText(@"C:\Users\jhoxha\OneDrive - ALTEN Group\Documents\GitHub\Esercizi\Esercizi\EsercizioJson\Prova.json");
+            Items = JsonConvert.DeserializeObject<ObservableCollection<Persone_M>>(json);
         }
 
-        private Persone_M selectedItem;
-        public Persone_M SelectedItem
+        private Persone_M selectedperson;
+        public Persone_M SelectedPerson
         {
-            get { return selectedItem; }
+            get { return selectedperson; }
             set
             {
-                if (selectedItem != value)
+                if (selectedperson != value)
                 {
-                    selectedItem = value;
-                    OnPropertyChanged(nameof(SelectedItem));
+                    selectedperson = value;
+                    OnPropertyChanged(nameof(SelectedPerson));
                 }
             }
         }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)

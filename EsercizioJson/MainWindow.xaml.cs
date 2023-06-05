@@ -10,7 +10,7 @@ namespace EsercizioJson
         public MainWindow()
         {
             InitializeComponent();
-
         }
+
     }
 }

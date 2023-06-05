@@ -11,11 +11,13 @@
         <vm:Persone_VM x:Key="Persone_VM"/>
     </Window.Resources>
     <Grid DataContext="{StaticResource Persone_VM}">
-        <ListBox x:Name="ListBox" ItemsSource="{Binding Items}" SelectedValue="{Binding SelectedItem}" Margin="10,105,625,202" SelectionChanged="ListBox_SelectionChanged" />
-        <TextBox x:Name="Nome" TextWrapping="Wrap" Text="{Binding SelectedItem.Nome}" Margin="280,100,415,312" SelectionChanged="ListBox_SelectionChanged" />
-        <TextBox x:Name="Cognome" TextWrapping="Wrap" Text="{Binding SelectedItem.Cognome}" Margin="280,125,415,284" SelectionChanged="ListBox_SelectionChanged" />
-        <TextBox x:Name="Sesso" TextWrapping="Wrap" Text="{Binding SelectedItem.Sesso}" Margin="280,155,415,256" SelectionChanged="ListBox_SelectionChanged"  />
-        <TextBox x:Name="Età" TextWrapping="Wrap" Text="{Binding SelectedItem.Età}" Margin="280,183,415,229" SelectionChanged="ListBox_SelectionChanged" />
-        <TextBox x:Name="Telefono" TextWrapping="Wrap" Text="{Binding SelectedItem.Telefono}" Margin="280,210,415,202" SelectionChanged="ListBox_SelectionChanged" />
+        <StackPanel>
+        <ListBox x:Name="ListBox" ItemsSource="{Binding Items}" DisplayMemberPath="Nome" SelectedValue="{Binding SelectedPerson, Mode=Default}" />
+        <TextBox x:Name="Nome"  Text="{Binding SelectedPerson.Nome, Mode=OneWay}" />
+        <TextBox x:Name="Cognome" Text="{Binding SelectedPerson.Cognome}"   />
+        <TextBox x:Name="Sesso"  Text="{Binding SelectedPerson.Sesso}"   />
+        <TextBox x:Name="Età"  Text="{Binding SelectedPerson.Età}"   />
+        <TextBox x:Name="Telefono" Text="{Binding SelectedPerson.Telefono, Mode=OneWay}"  /> 
+        </StackPanel>
     </Grid>
 </Window>

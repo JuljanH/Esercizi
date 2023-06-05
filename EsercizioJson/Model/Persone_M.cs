@@ -1,62 +1,64 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
 namespace EsercizioJson.Model
 {
     internal class Persone_M : INotifyPropertyChanged
     {
+
         private string nome;
-        [JsonProperty("Nome")]
+        [JsonPropertyName("nome")]
+        [JsonProperty("nome")]
         public string Nome
         {
             get { return nome; }
             set
             {
                 nome = value;
-                OnPropertyChanged(Nome);
+                OnPropertyChanged(nameof(Nome));
             }
         }
         private string cognome;
-        [JsonProperty("Cognome")]
+        [JsonPropertyName("cognome")]
+        [JsonProperty("cognome")]
         public string Cognome
         {
             get { return cognome; }
             set { cognome = value;
-                  OnPropertyChanged(Cognome);
+                  OnPropertyChanged(nameof(Cognome));
             }
         }
         private string sesso;
-        [JsonProperty("Sesso")]
+        [JsonPropertyName("sesso")]
+        [JsonProperty("sesso")]
         public string Sesso
         {
             get { return sesso; }
             set { sesso = value;
-                  OnPropertyChanged(Sesso);
+                  OnPropertyChanged(nameof(Sesso));
             }
         }
         private string età;
-        [JsonProperty("Età")]
+        [JsonPropertyName("età")]
+        [JsonProperty("età")]
         public string Età
         {
             get { return età; }
             set { età = value;
-                  OnPropertyChanged(Età);
+                  OnPropertyChanged(nameof(Età));
             }
         }
 
 
         private string telefono;
-        [JsonProperty("Telefono")]
+        [JsonPropertyName("telefono")]
+        [JsonProperty("telefono")]
         public string Telefono
         {
             get { return telefono; }
             set { telefono = value;
-                OnPropertyChanged(Telefono);
+                OnPropertyChanged(nameof(Telefono));
             }
         }
         public event PropertyChangedEventHandler PropertyChanged;
@@ -65,5 +67,6 @@ namespace EsercizioJson.Model
             var handler = PropertyChanged;
             handler?.Invoke(this, new PropertyChangedEventArgs(info));
         }
+
     }
 }
