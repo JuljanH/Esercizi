@@ -61,6 +61,12 @@ namespace EsercizioJson.Model
                 OnPropertyChanged(nameof(Telefono));
             }
         }
+
+        public bool MostraEtà
+        {
+            get { return Sesso != "Uomo"; }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string info)
         {

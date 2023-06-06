@@ -5,6 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EsercizioJson"
         xmlns:vm="clr-namespace:EsercizioJson.ViewModel"
+        xmlns:converters="clr-namespace:EsercizioJson.Converters"
+
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
@@ -17,16 +19,32 @@
         </DataTemplate>
     </Window.Resources>
     <Grid DataContext="{StaticResource Persone_VM}">
-        <StackPanel HorizontalAlignment="Left" Width="150">
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Width="150">
             <ListBox x:Name="ListBox" ItemsSource="{Binding Items}"
                  ItemTemplate="{StaticResource myPersonTemplate}"
                  SelectedValue="{Binding SelectedPerson, Mode=Default}"/>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Center" Width="200">
-            <TextBox x:Name="Nome"  Text="{Binding SelectedPerson.Nome, Mode=OneWay}" />
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="200">
+            <TextBox x:Name="Nome" TextWrapping="Wrap" Text="{Binding SelectedPerson.Nome}" >
+                <TextBox.Foreground>
+                    <Binding Path="SelectedPerson.Nome" Mode="OneWay">
+                        <Binding.Converter>
+                            <converters:NomeColoreConverter />
+                        </Binding.Converter>
+                    </Binding>
+                </TextBox.Foreground>
+            </TextBox>
             <TextBox x:Name="Cognome" Text="{Binding SelectedPerson.Cognome}"   />
             <TextBox x:Name="Sesso"  Text="{Binding SelectedPerson.Sesso}"   />
-            <TextBox x:Name="Età"  Text="{Binding SelectedPerson.Età}"   />
+            <TextBox x:Name="Età"  Text="{Binding SelectedPerson.Età}" >
+                <TextBox.Visibility>
+                    <Binding Path="SelectedPerson.MostraEtà" Mode="OneWay">
+                        <Binding.Converter>
+                            <BooleanToVisibilityConverter />
+                        </Binding.Converter>
+                    </Binding>
+                </TextBox.Visibility>
+            </TextBox>
             <TextBox x:Name="Telefono" Text="{Binding SelectedPerson.Telefono, Mode=OneWay}"  /> 
             </StackPanel>
     </Grid>
