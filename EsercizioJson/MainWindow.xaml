@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EsercizioJson"
-        xmlns:converters="clr-namespace:System.Windows;assembly=PresentationFramework"
+        xmlns:converters="clr-namespace:EsercizioJson.Converters"
         xmlns:vm="clr-namespace:EsercizioJson.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
@@ -14,8 +14,16 @@
     <Grid DataContext="{StaticResource Persone_VM}">
         <StackPanel>
         <ListBox x:Name="ListBox" ItemsSource="{Binding Items}" DisplayMemberPath="Nome" SelectedValue="{Binding SelectedPerson, Mode=Default}" />
-        <TextBox x:Name="Nome"  Text="{Binding SelectedPerson.Nome, Mode=OneWay}" />
-        <TextBox x:Name="Cognome" Text="{Binding SelectedPerson.Cognome}"   />
+            <TextBox x:Name="Nome"  Text="{Binding SelectedPerson.Nome, Mode=OneWay}" >
+                <TextBox.Foreground>
+                    <Binding Path="SelectedPerson.Nome" Mode="OneWay">
+                        <Binding.Converter>
+                            <converters:NameToColorConverter />
+                        </Binding.Converter>
+                    </Binding>
+                </TextBox.Foreground>
+            </TextBox>
+            <TextBox x:Name="Cognome" Text="{Binding SelectedPerson.Cognome}"   />
         <TextBox x:Name="Sesso"  Text="{Binding SelectedPerson.Sesso}"   />
             <TextBox x:Name="Età"  Text="{Binding SelectedPerson.Età}" >
                 <TextBox.Visibility>

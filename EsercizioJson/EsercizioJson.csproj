@@ -86,6 +86,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\NameToColorConverter.cs" />
     <Compile Include="Model\Persone_M.cs" />
     <Compile Include="ViewModel\Persone_VM.cs" />
     <Page Include="MainWindow.xaml">
