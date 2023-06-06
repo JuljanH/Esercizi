@@ -12,5 +12,18 @@ namespace EsercizioJson
             InitializeComponent();
         }
 
+        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            if (e.NewSize.Width < 500)
+            {
+                MyStackPanel.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                MyStackPanel.Visibility = Visibility.Visible;
+            }
+        }
+
+
     }
 }

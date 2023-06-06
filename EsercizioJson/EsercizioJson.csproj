@@ -86,6 +86,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\NomeColoreConverter.cs" />
     <Compile Include="Model\Persone_M.cs" />
     <Compile Include="ViewModel\Persone_VM.cs" />

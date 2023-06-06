@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:EsercizioJson"
         xmlns:vm="clr-namespace:EsercizioJson.ViewModel"
         xmlns:converters="clr-namespace:EsercizioJson.Converters"
-
+        SizeChanged="Window_SizeChanged"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
@@ -24,7 +24,7 @@
                  ItemTemplate="{StaticResource myPersonTemplate}"
                  SelectedValue="{Binding SelectedPerson, Mode=Default}"/>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="200">
+        <StackPanel x:Name="MyStackPanel" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200">
             <TextBox x:Name="Nome" TextWrapping="Wrap" Text="{Binding SelectedPerson.Nome}" >
                 <TextBox.Foreground>
                     <Binding Path="SelectedPerson.Nome" Mode="OneWay">
